@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Temas Aleatórios</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Tela inicial -->
+    <div id="telaInicial" class="tela">
+        <h1>Jogo dos Temas</h1>
+
+        <label>Número de Jogadores:</label>
+        <div class="numero-jogadores">
+            <input type="radio" id="jogadores2" name="quantidadeJogadores" value="2" checked>
+            <label for="jogadores2">2</label>
+
+            <input type="radio" id="jogadores3" name="quantidadeJogadores" value="3">
+            <label for="jogadores3">3</label>
+
+            <input type="radio" id="jogadores4" name="quantidadeJogadores" value="4">
+            <label for="jogadores4">4</label>
+
+            <input type="radio" id="jogadores5" name="quantidadeJogadores" value="5">
+            <label for="jogadores5">5</label>
+
+            <input type="radio" id="jogadores6" name="quantidadeJogadores" value="6">
+            <label for="jogadores6">6</label>
+
+            <input type="radio" id="jogadores7" name="quantidadeJogadores" value="7">
+            <label for="jogadores7">7</label>
+
+            <input type="radio" id="jogadores8" name="quantidadeJogadores" value="8">
+            <label for="jogadores8">8</label>
+
+            <input type="radio" id="jogadores9" name="quantidadeJogadores" value="9">
+            <label for="jogadores9">9</label>
+
+            <input type="radio" id="jogadores10" name="quantidadeJogadores" value="10">
+            <label for="jogadores10">10</label>
+        </div>
+
+        <label>Tempo de Jogo:</label>
+        <div class="tempo-selecao">
+            <input type="radio" id="tempo30" name="tempoJogo" value="30">
+            <label for="tempo30">30s</label>
+
+            <input type="radio" id="tempo60" name="tempoJogo" value="60" checked>
+            <label for="tempo60">60s</label>
+
+            <input type="radio" id="tempo90" name="tempoJogo" value="90">
+            <label for="tempo90">90s</label>
+        </div>
+
+        <div id="camposNomes"></div>
+
+        <button id="iniciarJogo">Iniciar Jogo</button>
+
+        <label>Escolha um tema de cores:</label>
+        <select id="temaCores">
+            <option value="arcoiris">Arco-Íris Encantado</option>
+            <option value="floresta">Floresta Mágica</option>
+            <option value="doce">Mundo de Doces</option>
+            <option value="mar">Aventura no Mar</option>
+            <option value="espaco">Viagem Espacial</option>
+            <option value="safari">Safari Divertido</option>
+            <option value="circo">Noite de Circo</option>
+            <option value="gelo">Reino do Gelo</option>
+            <option value="fazenda">Alegria na Fazenda</option>
+            <option value="construcao">Construção Lúdica</option>
+        </select>
+    </div>
+
+    <!-- Tela do jogo -->
+    <div id="telaJogo" class="tela" style="display: none;">
+        <h1 class="tema-sorteado"</h1>
+        <p id="temaSorteado" ></p>
+        <p id="vezDoJogador"></p>
+
+        <div class="timer">
+            <div id="barraTempo"></div>
+            <span id="contadorTempo">60</span>
+        </div>
+
+        <div class="alfabeto">
+            <!-- Botões para cada letra do alfabeto -->
+            <button>A</button>
+            <button>B</button>
+            <button>C</button>
+            <button>D</button>
+            <button>E</button>
+            <button>F</button>
+            <button>G</button>
+            <button>H</button>
+            <button>I</button>
+            <button>J</button>
+            <button>K</button>
+            <button>L</button>
+            <button>M</button>
+            <button>N</button>
+            <button>O</button>
+            <button>P</button>
+            <button>Q</button>
+            <button>R</button>
+            <button>S</button>
+            <button>T</button>
+            <button>U</button>
+            <button>V</button>
+            <button>W</button>
+            <button>X</button>
+            <button>Y</button>
+            <button>Z</button>
+        </div>
+
+        <div id="julgamento" style="display: none;">
+            <p id="mensagemJulgamento"></p>
+            <button id="aceitar">Aceitar</button>
+            <button id="recusar">Recusar</button>
+        </div>
+
+        <div id="jogadores">
+            <h2>Jogadores</h2>
+            <ul id="listaJogadores"></ul>
+        </div>
+
+    </div>
+
+    <!-- Tela de pontuação (Removida) -->
+    <!-- Mensagem de jogador eliminado -->
+    <div id="mensagemEliminacao" style="display: none;" class="mensagem">
+        <p id="jogadorEliminadoNome"></p>
+        <button id="fecharMensagemEliminacao">OK</button>
+    </div>
+
+    <!-- Mensagem de vitória -->
+    <div id="mensagemVitoria" style="display: none;" class="mensagem">
+        <p id="jogadorVencedorNome"></p>
+        <div class="fogos-artificio">
+            <div class="fogo"></div>
+            <div class="fogo"></div>
+            <div class="fogo"></div>
+        </div>
+        <button id="fecharMensagemVitoria">Jogar Novamente</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

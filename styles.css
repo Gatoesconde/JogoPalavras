@@ -1,0 +1,555 @@
+/* Estilos gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--cor-terciaria);
+    color: var(--cor-texto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tela {
+    text-align: center;
+    background-color: var(--cor-secundaria);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 100%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--cor-primaria);
+    transition: color 0.3s ease;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--cor-texto);
+    transition: color 0.3s ease;
+}
+
+input[type="text"],
+select {
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid var(--cor-primaria);
+    border-radius: 5px;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+input[type="text"]::placeholder {
+    color: #C0C0C0;
+}
+
+button {
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 0.5rem;
+}
+
+button:hover {
+    background-color: var(--cor-terciaria);
+    color: var(--cor-primaria);
+}
+
+.alfabeto {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.alfabeto button {
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.alfabeto button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.alfabeto button.erro {
+    background-color: var(--cor-erro);
+    /* Cor para letras com erro */
+}
+
+.timer {
+    width: 100%;
+    background-color: var(--cor-terciaria);
+    border-radius: 5px;
+    margin: 1rem 0;
+    position: relative;
+    height: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#barraTempo {
+    height: 100%;
+    width: 100%;
+    background-color: var(--cor-primaria);
+    border-radius: 5px;
+    transition: width 1s linear, background-color 0.3s ease;
+}
+
+#contadorTempo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--cor-secundaria);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#jogadores {
+    background-color: var(--cor-secundaria);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#jogadores h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--cor-primaria);
+    transition: color 0.3s ease;
+}
+
+#listaJogadores {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+#listaJogadores li {
+    font-size: 1rem;
+    color: var(--cor-texto);
+    background-color: var(--cor-terciaria);
+    padding: 0.5rem;
+    border-radius: 5px;
+    text-align: center;
+    width: auto;
+    min-width: 50px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#listaJogadores li.inativo {
+    text-decoration: line-through;
+}
+
+/* Estilos para a seleção de tempo */
+.tempo-selecao {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+}
+
+.tempo-selecao label {
+    margin: 0;
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--cor-terciaria);
+    color: var(--cor-primaria);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tempo-selecao input[type="radio"] {
+    display: none;
+}
+
+.tempo-selecao input[type="radio"]:checked+label {
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
+
+/* Estilos para seleção de número de jogadores */
+.numero-jogadores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+}
+
+.numero-jogadores label {
+    margin: 0;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--cor-terciaria);
+    color: var(--cor-primaria);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: bold;
+    width: 3rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+.numero-jogadores input[type="radio"] {
+    display: none;
+}
+
+.numero-jogadores input[type="radio"]:checked+label {
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
+
+/* Estilo para mudar a cor do contador de tempo */
+.timer.metade-tempo #contadorTempo {
+    color: var(--cor-terciaria);
+    /* Rosa */
+}
+
+/* Estilo para o menu de julgamento */
+#julgamento {
+    background-color: var(--cor-secundaria);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 1rem;
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#julgamento p {
+    font-size: 1.1rem;
+    color: var(--cor-primaria);
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+#julgamento button {
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 0.3rem;
+}
+
+#julgamento button:hover {
+    background-color: var(--cor-terciaria);
+    color: var(--cor-primaria);
+}
+
+/* Estilo para a mensagem de eliminação */
+.mensagem {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--cor-secundaria);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mensagem p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--cor-primaria);
+    transition: color 0.3s ease;
+}
+
+.mensagem button {
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.mensagem button:hover {
+    background-color: var(--cor-terciaria);
+    color: var(--cor-primaria);
+}
+
+/* Estilos para fogos de artifício (vitória) */
+.fogos-artificio {
+    position: relative;
+    width: 100%;
+    height: 100px;
+}
+
+.fogo {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #FFD700;
+    /* Ouro */
+    border-radius: 50%;
+    animation: explosao 2s ease-out infinite;
+}
+
+.fogo:nth-child(1) {
+    top: 10px;
+    left: 20%;
+    animation-delay: 0.3s;
+}
+
+.fogo:nth-child(2) {
+    top: 30px;
+    left: 50%;
+    animation-delay: 0.5s;
+}
+
+.fogo:nth-child(3) {
+    top: 20px;
+    left: 80%;
+    animation-delay: 0.7s;
+}
+
+@keyframes explosao {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100px) scale(0);
+        opacity: 0;
+    }
+}
+
+/* Paletas de Cores */
+:root {
+    /* Cores padrão */
+    --cor-primaria: #D70654;
+    --cor-secundaria: #FFEFC8;
+    --cor-terciaria: #FFD1DC;
+    --cor-texto: #000000;
+    --cor-erro: #FF0000;
+}
+
+/* Tema Arco-Íris Encantado */
+[data-tema="arcoiris"] {
+    --cor-primaria: #FF69B4;
+    /* Rosa choque */
+    --cor-secundaria: #FFF0F5;
+    /* Lavanda */
+    --cor-terciaria: #FFB6C1;
+    /* Rosa claro */
+    --cor-texto: #4B0082;
+    /* Indigo */
+    --cor-erro: #DC143C;
+    /* Carmesim */
+}
+
+/* Tema Floresta Mágica */
+[data-tema="floresta"] {
+    --cor-primaria: #228B22;
+    /* Verde floresta */
+    --cor-secundaria: #F0FFF0;
+    /* Creme */
+    --cor-terciaria: #98FB98;
+    /* Verde menta */
+    --cor-texto: #8B4513;
+    /* Marrom */
+    --cor-erro: #A52A2A;
+    /* Marrom avermelhado */
+}
+
+/* Tema Mundo de Doces */
+[data-tema="doce"] {
+    --cor-primaria: #FF4081;
+    /* Rosa chiclete */
+    --cor-secundaria: #FFFACD;
+    /* Amarelo limão */
+    --cor-terciaria: #FFDAB9;
+    /* Pêssego */
+    --cor-texto: #800080;
+    /* Roxo */
+    --cor-erro: #C71585;
+    /* Rosa médio */
+}
+
+/* Tema Aventura no Mar */
+[data-tema="mar"] {
+    --cor-primaria: #00BFFF;
+    /* Azul celeste */
+    --cor-secundaria: #E0FFFF;
+    /* Azul claro */
+    --cor-terciaria: #ADD8E6;
+    /* Azul claro */
+    --cor-texto: #00008B;
+    /* Azul marinho */
+    --cor-erro: #4682B4;
+    /* Azul aço */
+}
+
+/* Tema Viagem Espacial */
+[data-tema="espaco"] {
+    --cor-primaria: #483D8B;
+    /* Azul ardósia escuro */
+    --cor-secundaria: #F8F8FF;
+    /* Branco fantasma */
+    --cor-terciaria: #778899;
+    /* Cinza claro */
+    --cor-texto: #FFFFFF;
+    /* Branco */
+    --cor-erro: #B0C4DE;
+    /* Azul acinzentado claro */
+}
+
+/* Tema Safari Divertido */
+[data-tema="safari"] {
+    --cor-primaria: #DAA520;
+    /* Dourado */
+    --cor-secundaria: #FAF0E6;
+    /* Linho */
+    --cor-terciaria: #BDB76B;
+    /* Verde caqui escuro */
+    --cor-texto: #8B4513;
+    /* Marrom selado */
+    --cor-erro: #D2691E;
+    /* Chocolate */
+}
+
+/* Tema Noite de Circo */
+[data-tema="circo"] {
+    --cor-primaria: #9400D3;
+    /* Violeta escuro */
+    --cor-secundaria: #FFF5EE;
+    /* Concha do mar */
+    --cor-terciaria: #D0B4DE;
+    /* Lavanda claro */
+    --cor-texto: #FF1493;
+    /* Rosa choque */
+    --cor-erro: #FF0000;
+    /* Vermelho */
+}
+
+/* Tema Reino do Gelo */
+[data-tema="gelo"] {
+    --cor-primaria: #AFEEEE;
+    /* Turquesa pálido */
+    --cor-secundaria: #F0F8FF;
+    /* Alice azul */
+    --cor-terciaria: #E6E6FA;
+    /* Lavanda */
+    --cor-texto: #708090;
+    /* Ardósia cinza */
+    --cor-erro: #40E0D0;
+    /* Turquesa */
+}
+
+/* Tema Alegria na Fazenda */
+[data-tema="fazenda"] {
+    --cor-primaria: #8FBC8F;
+    /* Verde mar escuro */
+    --cor-secundaria: #FFFFF0;
+    /* Marfim */
+    --cor-terciaria: #F5DEB3;
+    /* Trigo */
+    --cor-texto: #A0522D;
+    /* Siena */
+    --cor-erro: #CD853F;
+    /* Peru */
+}
+
+/* Tema Construção Lúdica */
+[data-tema="construcao"] {
+    --cor-primaria: #f9ebc4;
+    /* Laranja */
+    --cor-secundaria: #ffb391;
+    /* Creme */
+    --cor-terciaria: #fc2f68;
+    /* Ouro */
+    --cor-texto: #472f5f;
+    /* Cinza */
+    --cor-erro: #08295e;
+    /* Laranja avermelhado */
+
+    
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .tela {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .alfabeto {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .tempo-selecao,
+    .numero-jogadores {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tempo-selecao label,
+    .numero-jogadores label {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .alfabeto {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
