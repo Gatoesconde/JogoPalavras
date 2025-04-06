@@ -25,83 +25,75 @@ const temas = [
 
 // Paletas de cores
 const paletasDeCores = {
-    "arcoiris": {
-        "--cor-primaria": "#ed5672",
-        "--cor-secundaria": "#160e32",
-        "--cor-terciaria": "#cdbb93",
-        "--cor-texto": "#574435",
-        "--cor-erro": "#fbc599"
-
-        
+    "sereno": {
+        "--cor-primaria": "#6C5B7B",
+        "--cor-secundaria": "#C06C84",
+        "--cor-terciaria": "#F67280",
+        "--cor-texto": "#355C7D",
+        "--cor-erro": "#F8B195"
     },
-    "floresta": {
-        "--cor-primaria": "#300511",
-        "--cor-secundaria": "#b3544f",
-        "--cor-terciaria": "#d6c396",
-        "--cor-texto": "#e7fccf",
-        "--cor-erro": "#1f0b0c"
-
+    "natureza": {
+        "--cor-primaria": "#3A6B35",
+        "--cor-secundaria": "#5B8C5A",
+        "--cor-terciaria": "#C8E6C9",
+        "--cor-texto": "#1B5E20",
+        "--cor-erro": "#FFCDD2"
     },
-    "doce": {
-        "--cor-primaria": "#FF4081",
-        "--cor-secundaria": "#FFFACD",
-        "--cor-terciaria": "#FFDAB9",
-        "--cor-texto": "#800080",
-        "--cor-erro": "#C71585"
+    "oceano": {
+        "--cor-primaria": "#1A237E",
+        "--cor-secundaria": "#1976D2",
+        "--cor-terciaria": "#4FC3F7",
+        "--cor-texto": "#0D47A1",
+        "--cor-erro": "#E1F5FE"
     },
-    "mar": {
-        "--cor-primaria": "#300511",
-        "--cor-secundaria": "#4682B4",
-        "--cor-terciaria": "#d6c396",
-        "--cor-texto": "#e7fccf",
-        "--cor-erro": "#1f0b0c"
-
+    "elegante": {
+        "--cor-primaria": "#212121",
+        "--cor-secundaria": "#424242",
+        "--cor-terciaria": "#9E9E9E",
+        "--cor-texto": "#E0E0E0",
+        "--cor-erro": "#F5F5F5"
     },
-    "espaco": {
-        "--cor-primaria": "#ada241",
-        "--cor-secundaria": "#a13866",
-        "--cor-terciaria": "#381c30",
-        "--cor-texto": "#a4f7d4",
-        "--cor-erro": "#9ae07d"
-
+    "vibrante": {
+        "--cor-primaria": "#E53935",
+        "--cor-secundaria": "#FFA000",
+        "--cor-terciaria": "#FFD600",
+        "--cor-texto": "#1E88E5",
+        "--cor-erro": "#43A047"
     },
-    "safari": {
-        "--cor-primaria": "#d9d4a8",
-        "--cor-secundaria": "#5c374b",
-        "--cor-terciaria": "#cc3747",
-        "--cor-texto": "#d15c57",
-        "--cor-erro": "#d9d4a8"
-
+    "pastel": {
+        "--cor-primaria": "#FF9AA2",
+        "--cor-secundaria": "#FFB7B2",
+        "--cor-terciaria": "#FFDAC1",
+        "--cor-texto": "#E2F0CB",
+        "--cor-erro": "#B5EAD7"
     },
-    "circo": {
-        "--cor-primaria": "#9400D3",
-        "--cor-secundaria": "#FFF5EE",
-        "--cor-terciaria": "#D0B4DE",
-        "--cor-texto": "#FF1493",
-        "--cor-erro": "#FF0000"
+    "deserto": {
+        "--cor-primaria": "#D2B48C",
+        "--cor-secundaria": "#F5DEB3",
+        "--cor-terciaria": "#8B4513",
+        "--cor-texto": "#A0522D",
+        "--cor-erro": "#CD853F"
     },
-    "gelo": {
-        "--cor-primaria": "#2f2e30",
-        "--cor-secundaria": " #e84b2c",
-        "--cor-terciaria": " #e6d839",
-        "--cor-texto": "#2f2e30",
-        "--cor-erro": "#2f2e30"
-
+    "noturno": {
+        "--cor-primaria": "#0F2027",
+        "--cor-secundaria": "#203A43",
+        "--cor-terciaria": "#2C5364",
+        "--cor-texto": "#CBD5E0",
+        "--cor-erro": "#E53E3E"
     },
-    "fazenda": {
-        "--cor-primaria": "#f9ebc4",
-        "--cor-secundaria": "#fc2f68",
-        "--cor-terciaria": "#ffb391",
-        "--cor-texto": "#472f5f",
-        "--cor-erro": "#08295e"
+    "primavera": {
+        "--cor-primaria": "#FF7E5F",
+        "--cor-secundaria": "#FEB47B",
+        "--cor-terciaria": "#FFDC9F",
+        "--cor-texto": "#CEEC97",
+        "--cor-erro": "#A2D5AB"
     },
-    "construcao": {
-        "--cor-primaria": "#000000",
-        "--cor-secundaria": "#7890a8",
-        "--cor-terciaria": "#304878",
-        "--cor-texto": "#181848",
-        "--cor-erro": "#f0a818"
-
+    "moderno": {
+        "--cor-primaria": "#2D4059",
+        "--cor-secundaria": "#EA5455",
+        "--cor-terciaria": "#F07B3F",
+        "--cor-texto": "#FFD460",
+        "--cor-erro": "#4E4E6A"
     }
 };
 
